@@ -1,5 +1,6 @@
 ﻿using Sitecore.Mvc.Presentation;
 using System.Linq;
+using System.Security.Policy;
 using System.Web.Mvc;
 using WbbHackathon.Feature.IACarousel.Models;
 using WbbHackathon.Feature.IACarousel.Repositories;
@@ -28,8 +29,6 @@ namespace WbbHackathon.Feature.IACarousel.Controllers
             var dataSourceId = RenderingContext.CurrentOrNull?.Rendering.DataSource == null ? Session["dataSourceId"].ToString() : RenderingContext.CurrentOrNull.Rendering.DataSource;
             Session["dataSourceId"] = dataSourceId;
             var model = _imageGenerationRepository.GenerateImages(dataSourceId);
-            //SmartCarouselModel model = GenerateMockCarouselData();
-            Session["GeneratedCarousel"] = model;
             return View(SmartCarouselView, model);
         }
 
@@ -52,8 +51,7 @@ namespace WbbHackathon.Feature.IACarousel.Controllers
             var imageItems = _mediaItemRepository.CreateMediaItem(selectedImagesArray.ToList(), $"/sitecore/media library/Carousel/{prompt}");
 
             _mediaItemRepository.CreateItem(Templates.UserSmartCarousel.ID.ToString(), sourceItemsId, prompt, imageItems);
-            var model = Session["GeneratedCarousel"];
-            return View(SmartCarouselView, model);
+            return Redirect("/success");
         }
     }
 }
