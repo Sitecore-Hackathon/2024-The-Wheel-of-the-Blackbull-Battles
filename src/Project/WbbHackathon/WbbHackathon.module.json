@@ -14,6 +14,11 @@
                 "name": "Layout",
                 "path": "/sitecore/layout/Layouts/Project/Hackathon",
                 "database": "master"
+            },
+            {
+                "name": "Renderings",
+                "path": "/sitecore/layout/Renderings/Project/Hackathon",
+                "database": "master"
             }
         ]
     }
