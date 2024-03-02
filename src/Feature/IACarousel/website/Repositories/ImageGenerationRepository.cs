@@ -3,7 +3,9 @@ using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Mvc.Presentation;
+using Sitecore.Web.UI;
 using System.Linq;
+using System.Web.ModelBinding;
 using WbbHackathon.Feature.IACarousel.Models;
 using WbbHackathon.Feature.IACarousel.Models.Parameters;
 using WbbHackathon.Feature.IACarousel.Services;
@@ -19,17 +21,19 @@ namespace WbbHackathon.Feature.IACarousel.Repositories
             _leonardoAIService = leonardoAIService;
         }
 
-        public SmartCarouselModel GenerateImages()
+        public SmartCarouselModel GenerateImages(string dataSourceId)
         {
-            var model = new SmartCarouselModel();
+            var model = new SmartCarouselModel();            
 
-            var dataSourceId = RenderingContext.CurrentOrNull.Rendering.DataSource;
+            //var dataSourceId = RenderingContext.CurrentOrNull.Rendering.DataSource;
+            
             var dataSource = Sitecore.Context.Database.GetItem(dataSourceId);
 
             if (!IsModelValid(dataSource, Templates.HeroCarouselAI.Id))
                 return model;
 
             var serviceParameters = new ImageGenerationParameters();
+            
             serviceParameters.Prompt = dataSource.Fields[Templates.HeroCarouselAI.Fields.Prompt].Value;
             serviceParameters.Width = int.Parse(dataSource.Fields[Templates.HeroCarouselAI.Fields.Width].Value);
             serviceParameters.Height = int.Parse(dataSource.Fields[Templates.HeroCarouselAI.Fields.Height].Value);
@@ -58,6 +62,9 @@ namespace WbbHackathon.Feature.IACarousel.Repositories
                     model.Images.Add(smartImage);   
                 });
             }
+
+            model.Prompt = serviceParameters.Prompt;
+            model.DataSource = dataSourceId;
 
             return model;
         }
