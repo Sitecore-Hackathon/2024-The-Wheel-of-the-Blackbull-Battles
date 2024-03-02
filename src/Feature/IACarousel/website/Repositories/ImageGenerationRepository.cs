@@ -33,6 +33,7 @@ namespace WbbHackathon.Feature.IACarousel.Repositories
             serviceParameters.Prompt = dataSource.Fields[Templates.HeroCarouselAI.Fields.Prompt].Value;
             serviceParameters.Width = int.Parse(dataSource.Fields[Templates.HeroCarouselAI.Fields.Width].Value);
             serviceParameters.Height = int.Parse(dataSource.Fields[Templates.HeroCarouselAI.Fields.Height].Value);
+            serviceParameters.NumberOfImages= int.Parse(dataSource.Fields[Templates.HeroCarouselAI.Fields.NumberOfImages].Value);
 
             var selectedItem = GetSelectedItemFromDroplistField(dataSource, Templates.HeroCarouselAI.Fields.ImageCreativeModel);
 
