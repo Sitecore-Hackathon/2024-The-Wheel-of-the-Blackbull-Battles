@@ -6,16 +6,16 @@ namespace WbbHackathon.Feature.IACarousel.Controllers
 {
     public class SmartCarouselController : Controller
     {
-        //private readonly ISmartCarouselRepository _smartCartCarouselRepository;
+        private readonly IImageGenerationRepository _imageGenerationRepository;
 
-        //public SmartCarouselController(ISmartCarouselRepository smartCartCarouselRepository)
-        //{
-        //    _smartCartCarouselRepository = smartCartCarouselRepository;
-        //}
+        public SmartCarouselController(IImageGenerationRepository imageGenerationRepository)
+        {
+            _imageGenerationRepository = imageGenerationRepository;
+        }
 
         public ActionResult GetSmartCarousel()
         {
-            SmartCarouselModel model = new SmartCarouselModel();
+            var model = _imageGenerationRepository.GenerateImages();
             return View("~/Views/SmartCarousel/SmartCarouselView.cshtml", model);
         }
     }

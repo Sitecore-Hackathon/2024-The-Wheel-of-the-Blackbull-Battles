@@ -12,78 +12,25 @@
     <p><strong>Regenerate: </strong>Replace all the selected images for new ones</p>
     <p><strong>Save: </strong>Save all the selected images for user visualization</p>
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card">
-                <img src="https://www.redsharknews.com/hubfs/Portrait_female_Midjourney.jpg" class="card-img-top"
-                     alt="...">
-                <input type="checkbox" name="image-1" id="image-1" style="
-                            position: absolute;
-                            margin: 1rem;
-                            width: 2rem;
-                            height: 2rem;
-                        ">
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="https://www.redsharknews.com/hubfs/Portrait_female_Midjourney.jpg" class="card-img-top"
-                     alt="...">
-                <input type="checkbox" name="image-1" id="image-1" style="
-                            position: absolute;
-                            margin: 1rem;
-                            width: 2rem;
-                            height: 2rem;
-                        ">
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="https://www.redsharknews.com/hubfs/Portrait_female_Midjourney.jpg" class="card-img-top"
-                     alt="...">
-                <input type="checkbox" name="image-1" id="image-1" style="
-                            position: absolute;
-                            margin: 1rem;
-                            width: 2rem;
-                            height: 2rem;
-                        ">
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="https://www.redsharknews.com/hubfs/Portrait_female_Midjourney.jpg" class="card-img-top"
-                     alt="...">
-                <input type="checkbox" name="image-1" id="image-1" style="
-                            position: absolute;
-                            margin: 1rem;
-                            width: 2rem;
-                            height: 2rem;
-                        ">
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="https://www.redsharknews.com/hubfs/Portrait_female_Midjourney.jpg" class="card-img-top"
-                     alt="...">
-                <input type="checkbox" name="image-1" id="image-1" style="
-                            position: absolute;
-                            margin: 1rem;
-                            width: 2rem;
-                            height: 2rem;
-                        ">
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img src="https://www.redsharknews.com/hubfs/Portrait_female_Midjourney.jpg" class="card-img-top"
-                     alt="...">
-                <input type="checkbox" name="image-1" id="image-1" style="
-                            position: absolute;
-                            margin: 1rem;
-                            width: 2rem;
-                            height: 2rem;
-                        ">
-            </div>
-        </div>
+
+        @foreach (var item in Model.Images)
+	    {
+             <div class="col">
+                 <div class="card">
+                     <img src="@item.Url" class="card-img-top"
+                          alt="...">
+                     <input type="checkbox" name="@item.ID" id="@item.ID" style="
+                        position: absolute;
+                        margin: 1rem;
+                        width: 2rem;
+                        height: 2rem;
+                    ">
+                 </div>
+             </div>
+	    }
+
+        
+        
     </div>
 </div>
 

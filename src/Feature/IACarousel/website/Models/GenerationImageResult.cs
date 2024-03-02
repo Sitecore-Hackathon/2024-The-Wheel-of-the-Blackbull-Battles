@@ -99,7 +99,7 @@ namespace WbbHackathon.Feature.IACarousel.Models
     public partial class GeneratedImage
     {
         [JsonProperty("url")]
-        public Uri Url { get; set; }
+        public string Url { get; set; }
 
         [JsonProperty("nsfw")]
         public bool Nsfw { get; set; }

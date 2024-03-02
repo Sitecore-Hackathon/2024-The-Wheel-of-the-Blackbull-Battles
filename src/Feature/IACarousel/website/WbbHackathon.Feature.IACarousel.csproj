@@ -52,8 +52,6 @@
     <Compile Include="Models\SmartCarouselImage.cs" />
     <Compile Include="Models\SmartCarouselModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\ISmartCarouselRepository.cs" />
-    <Compile Include="Repositories\SmartCarouselRepository.cs" />
     <Compile Include="Repositories\IImageGenerationRepository.cs" />
     <Compile Include="Repositories\ImageGenerationRepository.cs" />
     <Compile Include="Services\ILeonardoAIService.cs" />

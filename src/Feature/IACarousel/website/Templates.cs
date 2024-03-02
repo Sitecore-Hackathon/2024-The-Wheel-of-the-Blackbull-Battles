@@ -22,5 +22,17 @@ namespace WbbHackathon.Feature.IACarousel
                 public static ID ImageCreativeModel = new ID("{868CE3A8-1618-4F77-BAE8-3CBFDC12AA99}");
             }
         }
+
+        public struct ImageCreationModel
+        {
+            public static ID Id = new ID("{14DAF934-CF9D-4A08-AA14-C9D989EC2F74}");
+
+            public struct Fields
+            {
+                public static ID Id = new ID("{B8EE2C12-A190-4F9D-91CA-75F9E4C1A630}");
+                public static ID Name = new ID("{31CAA58B-6A75-49E6-A02B-C71F64338499}");
+                public static ID Description = new ID("{23F0D857-976B-4778-BB42-51DAF32A9322}");
+            }
+        }
     }
 }
