@@ -1,0 +1,18 @@
+﻿---
+ID: "7923d2e2-2e7d-419d-83ea-9678e9268317"
+Parent: "14daf934-cf9d-4a08-aa14-c9d989ec2f74"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/IACarousel/Image Creation Model/Model Generation Specification
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240302T042317Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\frueda

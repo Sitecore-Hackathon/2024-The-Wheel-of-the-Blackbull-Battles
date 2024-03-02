@@ -60,6 +60,7 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.Users.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Users.DataProvider.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
+    <Content Include="App_Config\Include\z.Foundation.Overrides\Foundation.Serialization.Settings.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.config" />
   </ItemGroup>
