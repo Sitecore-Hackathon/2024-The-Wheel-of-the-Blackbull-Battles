@@ -18,7 +18,8 @@
                 <div class="col">
                     <div class="card">
                         <img src="@item.Url" class="card-img-top"
-                             alt="...">
+                             id="@(item.ID + "-image")"
+                             alt="IA Generated image">
                         <input type="checkbox" name="generatedImages" id="@item.ID" style="
                         position: absolute;
                         margin: 1rem;
@@ -46,15 +47,18 @@
 
 <script>
     $(document).ready(function () {
-
-        $(".row .col input[name='generatedImages']:checked").each(function () {
-            var id = this.attr('id');
-            var selectedImage = $("#selectedImages").val();
-            selectedImage = selectedImage + id + "|";
-            $("#selectedImages").val(selectedImage);
-        });
-
         $("#savebtn").click(function () {
+            var selectedImages = "";
+            $('input:checkbox:checked').each(function () {
+                var imgUrl = document.getElementById(this.id + "-image").src;
+                if (selectedImages == "") {
+                    selectedImages += imgUrl;
+                } else {
+                    selectedImages += "|" + imgUrl;
+                }
+            });
+            console.log(selectedImages);
+            $("#selectedImages").val(selectedImages);
             $("#formImages").submit();
         });
 
