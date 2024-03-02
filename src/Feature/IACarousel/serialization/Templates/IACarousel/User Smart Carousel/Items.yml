@@ -3,7 +3,6 @@ ID: "84c5c614-91e4-4cd8-9a55-2fa760a7d3da"
 Parent: "7f2c4ef3-2007-4ae3-bf2c-c262b66f64e3"
 Template: "e269fbb5-3750-427a-9149-7aa950b49301"
 Path: /sitecore/templates/Feature/IACarousel/User Smart Carousel/Items
-DB: master
 Languages:
 - Language: en
   Versions:
@@ -16,3 +15,13 @@ Languages:
       Hint: __Created by
       Value: |
         sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "91755723-c73e-4c71-9684-87c34cfdf784"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240302T135333Z

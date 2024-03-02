@@ -24,8 +24,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serialization", "Serialization", "{00C53F10-3964-4EB2-9CB3-2D9D312D4156}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IACarousel", "IACarousel", "{07F7CF21-548C-4940-A716-C15F90BE0304}"
+	ProjectSection(SolutionItems) = preProject
+		src\Feature\IACarousel\AICarousel.module.json = src\Feature\IACarousel\AICarousel.module.json
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WbbHackathon", "WbbHackathon", "{A94F0C5D-8D0C-41A3-B4B7-5FCD4B279F8A}"
+	ProjectSection(SolutionItems) = preProject
+		src\Project\WbbHackathon\WbbHackathon.module.json = src\Project\WbbHackathon\WbbHackathon.module.json
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WbbHackathon.Feature.IACarousel", "src\Feature\IACarousel\website\WbbHackathon.Feature.IACarousel.csproj", "{9A0D050D-AE88-41FD-B52E-0859D975B5A8}"
 EndProject

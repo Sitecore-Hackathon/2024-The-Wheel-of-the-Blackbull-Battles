@@ -1,0 +1,20 @@
+{
+    "namespace": "Project.WbbHackathon",
+    "references": [
+        "Feature.*"
+    ],
+    "items": {
+        "includes": [
+            {
+                "name": "Templates",
+                "path": "/sitecore/templates/Project/WbbHackathon",
+                "database": "master"
+            },
+            {
+                "name": "Layout",
+                "path": "/sitecore/layout/Layouts/Project/Hackathon",
+                "database": "master"
+            }
+        ]
+    }
+}

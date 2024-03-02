@@ -3,7 +3,6 @@ ID: "88d6dafc-2adb-4143-8c69-b709a2652d13"
 Parent: "b534529f-a436-49eb-b03b-89bb189584ab"
 Template: "3a45a723-64ee-4919-9d41-02fd40fd1466"
 Path: /sitecore/layout/Layouts/Project/Hackathon/Hackathon Layout
-DB: master
 SharedFields:
 - ID: "a036b2bc-ba04-44f6-a75f-bae6cd242abf"
   Hint: Path
@@ -20,3 +19,13 @@ Languages:
       Hint: __Created by
       Value: |
         sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "69554e99-21ae-4c13-a61b-6b8d78dc3cc3"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240302T065959Z
