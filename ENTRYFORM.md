@@ -25,36 +25,52 @@ You can find a very good reference to Github flavoured markdown reference in [th
 
 ## Pre-requisites and Dependencies
 
-⟹ Does your module rely on other Sitecore modules or frameworks?
 
 -Sitecore Management Services 5.2.113 https://dev.sitecore.net/Downloads/Sitecore_CLI/5x/Sitecore_CLI_52113.aspx
-
-_Remove this subsection if your entry does not have any prerequisites other than Sitecore_
 
 ## Installation instructions
 
 -Install Sitecore 10.3.1 standalone
+
 -using the PS Script set the following in these variables:
+
  -- $Prefix = "wbb-hackaton"
+
  -- $SitecoreSiteName = "$prefix.local"
+
  -- $XConnectSiteName = "$prefix.xconnect"
--Run the installation process
+
+### Run the installation process
+
 -make sure your domain is like this one: https://wbb-hackaton.local/
+
 -clone the main branch in a folder
+
 -open the solution
+
 -build the solution and restore the nuget packages
+
 -using the Website project, deploy the project to the sitecore instance using the publishin process
+
 -Open a PS Terminal in the root of the solution
+
 -execute the following commands
 -- dotnet tool restore
+
 -- dotnet sitecore init
+
 -- dotnet sitecore plugin init
+
 -- dotnet sitecore login --authority https://wbb-hackaton.identityserver/ --cm https://wbb-hackaton.local/ --allow-write true
+
 --- do the login process and close the window
+
 -- dotnet sitecore ser push
 
 install the following package in the sc instance
+
 Smart Carousel Items.zip
+
 --in in the folder .\scPackages\Smart Carousel Items.zip
 
 -publish all website
