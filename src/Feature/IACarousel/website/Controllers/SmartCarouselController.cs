@@ -60,9 +60,9 @@ namespace WbbHackathon.Feature.IACarousel.Controllers
 
             var selectedImagesArray = selectedImages.Split(new char[] { '|' },System.StringSplitOptions.RemoveEmptyEntries);
 
-            _mediaItemRepository.CreateMediaItem(selectedImagesArray.ToList(), $"/sitecore/media library/Carousel/{prompt}");
+            var imageItems = _mediaItemRepository.CreateMediaItem(selectedImagesArray.ToList(), $"/sitecore/media library/Carousel/{prompt}");
 
-            _mediaItemRepository.CreateItem(Templates.UserSmartCarousel.ID.ToString(), HomeTemplateId, prompt, selectedImagesArray.ToList());
+            _mediaItemRepository.CreateItem(Templates.UserSmartCarousel.ID.ToString(), HomeTemplateId, prompt, imageItems);
 
             return RedirectToAction("GetUserSmartCarousel");
         }
