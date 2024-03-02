@@ -6,7 +6,12 @@ namespace WbbHackathon.Feature.IACarousel.Controllers
 {
     public class SmartCarouselController : Controller
     {
-        
+        //private readonly ISmartCarouselRepository _smartCartCarouselRepository;
+
+        //public SmartCarouselController(ISmartCarouselRepository smartCartCarouselRepository)
+        //{
+        //    _smartCartCarouselRepository = smartCartCarouselRepository;
+        //}
 
         public ActionResult GetSmartCarousel()
         {

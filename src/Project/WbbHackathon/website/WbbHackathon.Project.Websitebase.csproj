@@ -53,6 +53,9 @@
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc">
+      <Version>5.2.4</Version>
+    </PackageReference>
     <PackageReference Include="Sitecore.Kernel">
       <Version>10.3.1</Version>
       <IncludeAssets>compile</IncludeAssets>
