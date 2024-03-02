@@ -34,5 +34,15 @@ namespace WbbHackathon.Feature.IACarousel
                 public static ID Description = new ID("{23F0D857-976B-4778-BB42-51DAF32A9322}");
             }
         }
+
+        public struct UserSmartCarousel
+        {
+            public static ID ID = new ID("{7F2C4EF3-2007-4AE3-BF2C-C262B66F64E3}");
+
+            public struct Fields
+            {
+                public static ID Images = new ID("{C97651A8-6F93-4DCF-B442-B940EC5F51FD}");
+            }
+        }
     }
 }
