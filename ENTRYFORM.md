@@ -84,19 +84,22 @@ Smart Carousel Items.zip
 _Remove this subsection if your entry does not require any configuration that is not fully covered in the installation instructions already_
 
 ## Usage instructions
-⟹ Provide documentation about your module, how do the users use your module, where are things located, what do the icons mean, are there any secret shortcuts etc.
 
-Include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
+# Generate Carousel
 
-![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
+The **“Smart User Carousel”** component requires a data source to generate the carousel images automatically. The data source has information like the prompt and the number of images to generate.
+To create a new generation data source you need to create an item using the **“Hero Carousel AI”** template. In the following example we are going to generate 4 images for our carousel.
 
-You can embed images of different formats too:
+ 1. Create a new **“Hero Carousel AI”** item. In the next example the item is going to be created in the Data directory and its purpose is to generate a carousel for a music store page.**![](https://lh7-us.googleusercontent.com/y9obKyte3svEOv_TNT57p2f1rM4bU-A0wI53pgoknOzY5dCQVODbBCOn9yDbbu_Ttt-AflBLXOrFlxafCEbrUk_a0ZWNAPVggSiRvg0R3vQhOPCC-ETNk8KiWeYwH9ZPgPZItWE68iC08gpM5GO968w)**
+ 2. Set the values for generating the images. The prompt should describe what kind of images you want to generate. The height and width properties must be multiples of 8. The image creative model is going to define the model that Leonardo.ia is going to use for generating the images (refer to [Leonardo Ai Finetuned Models - Leonardo.Ai](https://app.leonardo.ai/finetuned-models) for more information).**![](https://lh7-us.googleusercontent.com/ktBT__M18mqyiI-wmbE1oUHMeQvkH1YmNdA6yOmXvSQ0EN7NSzxaPltCCP90gn_nHXZpcIr3rc0-WG-FGpkUQMDDcK3O2NVb6hFIHhJs8kUdRBPC7r1mYkM5OfTBtQyXtYbCwXiCvs0VAgzV8Hw_f4s)**
+ 3. Insert the “Smart Carousel” rendering using the data source item created on the previous step to generate the group of images.**![](https://lh7-us.googleusercontent.com/I2T2zVkJOvzLL9mFL8RYTOkFVNYpAPhY4izOLeHLD7YqRKoWQOcgiZ6yDDD8wP1nC3VTu3EvduoCkVJVHYGGbLwYw9fkN1PH-8-rLSgiSv3Keg81aFPPcHmBVLTPLhJvxJuAILCXT5JlGCCYQlgi81Y)**
+ 4. Navigate to the page, the images are going to be automatically generated.**![](https://lh7-us.googleusercontent.com/VGRabwyiZogWeaF_e7PPphIHPuLursVbuEJ5JjvCClrrNKU0GQx8EEFKf2OPMzEEL1l5P_UkHh5RbGhKvKtDl-cnSapdakdDMWLmRbLfkajCzwustgg15037QT9k5yO0a9DBkFMtCYWSxIFNRm0jWpg)**
+ 5. Select the images that you want to preserve for the final carousel and click save.**![](https://lh7-us.googleusercontent.com/OZtK_6EO3-8GqgIsS4D0BNE0YpzTDiGwytsmOrEieguzfyqdRuMOPRYIOKYlWUWNAeRuXAC70hPeCDNpucq0G6UAItndmhOPqQhNOjWAuneiEHu_I6LFz01SskjEPkPUAGhyyCVj7sGJ4Y1qktew_ws)**
+ 6. The images are going to be created on your media library as well as the data source item that can be used on the final render.**![](https://lh7-us.googleusercontent.com/CDo0K5Zd06u0gUIbf18TlMTo6oAUpCBcxVkPMFCiIOLEy20ivcowFU43c6GXPjkx6CEuAd0oXY3Tt1gxvm2Z_E5lprH-KvM4L8c9-WAeISA8h8lW-o_1ST2ru_gnbXITVVTrAbL3WisRl5YrzCYmrn8)****![](https://lh7-us.googleusercontent.com/fD3JcysHd9fLVDuY5Ne-bEitQlqv1pQSZU2cv4XJSqoqq9W3HD85ux7u8XhFMJ6KDUqqulZVC99sOdExdIj33J9QJtJjDrtvNSJdvX0wLpTHLfMQJftX1E9iKBRhfVoXXhqB5bYPePDGgtVO88EeM9I)****![](https://lh7-us.googleusercontent.com/ofZsL2zU3oblJJbgZWTAjUHAUm58AWDjhCtAvYqBLmkivUBKS5i8AjeGYOepySeGXmycChFK0K-ALxZ5iMb4MgDnFARm0zFAetZD8mqOMPXEUl2NrMdhPwglvo_m1B-mM-Gf4F5RGQFfg3nPQ41DnIk)**
+ 7. Insert the **“User Smart Carousel”** using the data source generated on the previous step.**![](https://lh7-us.googleusercontent.com/s3kklmIvMVek2gsRqHbGeZieNsDU06rgj-I6yk9Ny7fyi3ee_SbtkG3IAHtmmO_0Mx6l1c5rQWV0segb6HGkixA1nkXXWS95d4bnHb3OblGOj3EYeBvhbXHeYxQ3KRZ-wWiXkBJyAEatuFb4pXqsylA)**
+ 8. The carousel will display the generated images.**![](https://lh7-us.googleusercontent.com/BH68ZP8iXRx4alis2iEtU1xlTE6C0FD4XSoU3UjgOOoQIT0SvfndYZkeapSCVTBiscgwNaZt3fTfDT3duL97VfeT3tTaehW8y3kitnZ7rgTHfF9bLFygQE5dRinnBeUNLvlieCYoBNLL3pn2I4Qk98Q)**
 
-![Deal With It](docs/images/deal-with-it.gif?raw=true "Deal With It")
 
-And you can embed external images too:
-
-![Random](https://thiscatdoesnotexist.com/)
 
 ## Comments
 If you'd like to make additional comments that is important for your module entry.
