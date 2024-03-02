@@ -19,5 +19,10 @@ namespace WbbHackathon.Feature.IACarousel.Models.Parameters
 
         [JsonProperty("prompt")]
         public string Prompt { get; set; }
+
+        [JsonProperty("num_images")]
+        public int NumberOfImages { get; set; }
+
+        
     }
 }
