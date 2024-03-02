@@ -1,16 +1,13 @@
 ﻿using Sitecore.Configuration;
+using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Resources.Media;
 using Sitecore.SecurityModel;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
-using System.Web;
 
 namespace WbbHackathon.Feature.IACarousel.Repositories
 {
@@ -18,11 +15,11 @@ namespace WbbHackathon.Feature.IACarousel.Repositories
     {
         public List<string> CreateMediaItem(List<string> path, string destination, string database)
         {
-            List<string> result = new List<string>();            
+            List<string> result = new List<string>();
 
             foreach (var item in path)
-            {             
-                
+            {
+
                 string fileName = $"{item.Split('/').Last()}";
 
                 int i = 0;
@@ -45,7 +42,7 @@ namespace WbbHackathon.Feature.IACarousel.Repositories
                                     Versioned = false,
                                     IncludeExtensionInItemName = false,
                                     Database = Factory.GetDatabase(database),
-                                    Destination = $"{destination}/{ fileName.Split('.').First()}"
+                                    Destination = $"{destination}/{fileName.Split('.').First()}"
                                 };
 
                                 using (new SecurityDisabler())
@@ -61,6 +58,33 @@ namespace WbbHackathon.Feature.IACarousel.Repositories
             }
 
             return result;
-        }     
+        }
+
+        public void CreateItem(string templateId, string parentItemId, string itemName, List<string> multiListIds)
+        {
+            ID templateID = new ID(templateId);
+            ID parentID = new ID(parentItemId);
+
+            Item parentItem = Sitecore.Context.Database.GetItem(parentID);
+
+            if (parentItem != null)            {
+
+                using (new SecurityDisabler())
+                {
+                    Item newItem = parentItem.Add(itemName, new TemplateID(templateID));
+
+                    if (newItem != null)
+                    {
+                        if (multiListIds != null && multiListIds.Count > 0)
+                        {
+                            string imagesIds = string.Join("|", multiListIds);
+                            newItem.Fields[Templates.UserSmartCarousel.Fields.Images]?.SetValue(imagesIds, true);
+                        }
+
+                        newItem.Editing.EndEdit();
+                    }
+                }
+            }
+        }
     }
 }
