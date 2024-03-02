@@ -4,22 +4,31 @@ using Sitecore.Resources.Media;
 using Sitecore.SecurityModel;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Web;
 
 namespace WbbHackathon.Feature.IACarousel.Repositories
 {
     public class MediaItemRepository : IMediaItemRepository
     {
-        public List<string> CreateMediaItem(string[] path, string id, string destination, string database)
+        public List<string> CreateMediaItem(List<string> path, string destination, string database)
         {
-            List<string> result = null;
+            List<string> result = new List<string>();            
+
             foreach (var item in path)
-            {
+            {             
+                
+                string fileName = $"{item.Split('/').Last()}";
+
+                int i = 0;
                 Item mediaItem = null;
                 var request = WebRequest.Create(item);
+
                 using (var response = request.GetResponse())
                 {
                     using (var stream = response.GetResponseStream())
@@ -36,11 +45,13 @@ namespace WbbHackathon.Feature.IACarousel.Repositories
                                     Versioned = false,
                                     IncludeExtensionInItemName = false,
                                     Database = Factory.GetDatabase(database),
-                                    Destination = destination,
-                                    OverwriteExisting = true
+                                    Destination = $"{destination}/{ fileName.Split('.').First()}"
                                 };
 
-                                mediaItem = mediaCreator.CreateFromStream(memoryStream, $"{id}.jpg", options);
+                                using (new SecurityDisabler())
+                                {
+                                    mediaItem = mediaCreator.CreateFromStream(memoryStream, fileName, options);
+                                }
 
                                 result.Add(mediaItem.ID.ToString());
                             }
@@ -50,6 +61,6 @@ namespace WbbHackathon.Feature.IACarousel.Repositories
             }
 
             return result;
-        }
+        }     
     }
 }
