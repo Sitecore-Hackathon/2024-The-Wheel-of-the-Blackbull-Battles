@@ -45,6 +45,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Controllers\SmartCarouselController.cs" />
     <Compile Include="Models\GenerationImageResult.cs" />
     <Compile Include="Models\GenerationModel.cs" />
     <Compile Include="Models\Parameters\ImageGenerationParameters.cs" />
