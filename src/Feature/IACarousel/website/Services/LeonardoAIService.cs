@@ -47,12 +47,21 @@ namespace WbbHackathon.Feature.IACarousel.Services
                 {
 
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Constants.ApiToken);
-                    HttpResponseMessage response = client.GetAsync($"{Constants.GenerationEndPoint}/{generationId}").Result;
-                    if (response.IsSuccessStatusCode)
+                    HttpResponseMessage response;
+                    do
                     {
-                        var data = await response.Content.ReadAsStringAsync();
-                        model = JsonConvert.DeserializeObject<GenerationImageResult>(data);
-                    }
+                        response = client.GetAsync($"{Constants.GenerationEndPoint}/{generationId}").Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var settings = new JsonSerializerSettings
+                            {
+                                NullValueHandling = NullValueHandling.Ignore,
+                                MissingMemberHandling = MissingMemberHandling.Ignore
+                            };
+                            var data = await response.Content.ReadAsStringAsync();
+                            model = JsonConvert.DeserializeObject<GenerationImageResult>(data, settings);
+                        }
+                    } while (response.IsSuccessStatusCode && model.GenerationsByPk.Status == "PENDING");
                 }
             }
             catch (Exception ex)
