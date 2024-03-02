@@ -1,0 +1,42 @@
+﻿@using WbbHackathon.Feature.IACarousel.Models
+@model SmartCarouselModel
+
+@if (Model == null)
+{
+    return;
+}
+
+<div class="container py-5">
+    <p class="lead pt-3">Smart Image Generator - Editor View</p>
+    <p><strong>This view is only available on content editor mode</strong></p>
+    <p><strong>Regenerate: </strong>Replace all the selected images for new ones</p>
+    <p><strong>Save: </strong>Save all the selected images for user visualization</p>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        @foreach (var item in Model.Images)
+	    {
+             <div class="col">
+                 <div class="card">
+                     <img src="@item.Url" class="card-img-top"
+                          alt="...">
+                     <input type="checkbox" name="@item.ID" id="@item.ID" style="
+                        position: absolute;
+                        margin: 1rem;
+                        width: 2rem;
+                        height: 2rem;
+                    ">
+                 </div>
+             </div>
+	    }
+
+        
+        
+    </div>
+</div>
+
+<nav class="navbar fixed-bottom bg-light">
+    <div class="container text-right" style="display: flex; justify-content: right;">
+        <button type="button" class="btn btn-outline-danger w-25" style="margin-right: 1rem;">Regenerate</button>
+        <button type="button" class="btn btn-outline-success w-25">Save</button>
+    </div>
+</nav>
