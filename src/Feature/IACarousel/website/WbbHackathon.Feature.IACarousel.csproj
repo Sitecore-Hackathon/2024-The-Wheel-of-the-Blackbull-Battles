@@ -51,6 +51,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IImageGenerationRepository.cs" />
     <Compile Include="Repositories\ImageGenerationRepository.cs" />
+    <Compile Include="Repositories\IMediaItemRepository.cs" />
+    <Compile Include="Repositories\MediaItemRepository.cs" />
     <Compile Include="Services\ILeonardoAIService.cs" />
     <Compile Include="Services\LeonardoAIService.cs" />
     <Compile Include="Templates.cs" />
