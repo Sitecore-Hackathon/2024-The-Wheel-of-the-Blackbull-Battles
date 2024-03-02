@@ -26,6 +26,7 @@ namespace WbbHackathon.Feature.IACarousel.Controllers
         {           
             // var model = _imageGenerationRepository.GenerateImages();   
             SmartCarouselModel model = GenerateMockCarouselData();
+            Session["GeneratedCarousel"] = model;
             return View(SmartCarouselView, model);
         }
 
@@ -63,8 +64,8 @@ namespace WbbHackathon.Feature.IACarousel.Controllers
             var imageItems = _mediaItemRepository.CreateMediaItem(selectedImagesArray.ToList(), $"/sitecore/media library/Carousel/{prompt}");
 
             _mediaItemRepository.CreateItem(Templates.UserSmartCarousel.ID.ToString(), HomeTemplateId, prompt, imageItems);
-
-            return RedirectToAction("GetUserSmartCarousel");
+            var model = Session["GeneratedCarousel"];
+            return View(SmartCarouselView, model);
         }
     }
 }
