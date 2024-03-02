@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{502F54BF-D404-4146-8BAB-A9EE8F563F9C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		nuget.config = nuget.config
+		publishsettings.targets = publishsettings.targets
+		sitecore.json = sitecore.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feature", "Feature", "{9A7B8425-3A45-49EA-A9BA-C96B8D0118BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", "{E3A0E793-51C6-4681-BEE1-544F55800285}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{53EA08E7-66FA-4FAC-B091-94601D0A01AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DependencyInjection", "DependencyInjection", "{AEC9A6AB-1824-4D0D-92E5-3C1B94A0F17C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serialization", "Serialization", "{00C53F10-3964-4EB2-9CB3-2D9D312D4156}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IACarousel", "IACarousel", "{07F7CF21-548C-4940-A716-C15F90BE0304}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WbbHackathon", "WbbHackathon", "{A94F0C5D-8D0C-41A3-B4B7-5FCD4B279F8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WbbHackathon.Feature.IACarousel", "src\Feature\IACarousel\website\WbbHackathon.Feature.IACarousel.csproj", "{9A0D050D-AE88-41FD-B52E-0859D975B5A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WbbHackathon.Foundation.DependencyInjection", "src\Foundation\DependencyInjection\website\WbbHackathon.Foundation.DependencyInjection.csproj", "{F1969582-6585-42D1-93E9-0082BBB7E108}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WbbHackathon.Foundation.Serialization", "src\Foundation\Serialization\website\WbbHackathon.Foundation.Serialization.csproj", "{EE69BED8-B80B-4F2B-B0FD-E6EEA91A5865}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Website", "Website", "{FE14005C-2FEA-4FEE-A399-341133386242}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WbbHackathon.Website", "src\Website\WbbHackathon.Website\WbbHackathon.Website.csproj", "{99C067E1-7563-42C7-B743-C23BB242C25A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WbbHackathon.Project.Websitebase", "src\Project\WbbHackathon\website\WbbHackathon.Project.Websitebase.csproj", "{BFF27F6A-E934-4665-847E-413EB0F42758}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A0D050D-AE88-41FD-B52E-0859D975B5A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A0D050D-AE88-41FD-B52E-0859D975B5A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A0D050D-AE88-41FD-B52E-0859D975B5A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A0D050D-AE88-41FD-B52E-0859D975B5A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1969582-6585-42D1-93E9-0082BBB7E108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1969582-6585-42D1-93E9-0082BBB7E108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1969582-6585-42D1-93E9-0082BBB7E108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1969582-6585-42D1-93E9-0082BBB7E108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE69BED8-B80B-4F2B-B0FD-E6EEA91A5865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE69BED8-B80B-4F2B-B0FD-E6EEA91A5865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE69BED8-B80B-4F2B-B0FD-E6EEA91A5865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE69BED8-B80B-4F2B-B0FD-E6EEA91A5865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99C067E1-7563-42C7-B743-C23BB242C25A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99C067E1-7563-42C7-B743-C23BB242C25A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99C067E1-7563-42C7-B743-C23BB242C25A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99C067E1-7563-42C7-B743-C23BB242C25A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFF27F6A-E934-4665-847E-413EB0F42758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF27F6A-E934-4665-847E-413EB0F42758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF27F6A-E934-4665-847E-413EB0F42758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF27F6A-E934-4665-847E-413EB0F42758}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AEC9A6AB-1824-4D0D-92E5-3C1B94A0F17C} = {E3A0E793-51C6-4681-BEE1-544F55800285}
+		{00C53F10-3964-4EB2-9CB3-2D9D312D4156} = {E3A0E793-51C6-4681-BEE1-544F55800285}
+		{07F7CF21-548C-4940-A716-C15F90BE0304} = {9A7B8425-3A45-49EA-A9BA-C96B8D0118BB}
+		{A94F0C5D-8D0C-41A3-B4B7-5FCD4B279F8A} = {53EA08E7-66FA-4FAC-B091-94601D0A01AA}
+		{9A0D050D-AE88-41FD-B52E-0859D975B5A8} = {07F7CF21-548C-4940-A716-C15F90BE0304}
+		{F1969582-6585-42D1-93E9-0082BBB7E108} = {AEC9A6AB-1824-4D0D-92E5-3C1B94A0F17C}
+		{EE69BED8-B80B-4F2B-B0FD-E6EEA91A5865} = {00C53F10-3964-4EB2-9CB3-2D9D312D4156}
+		{99C067E1-7563-42C7-B743-C23BB242C25A} = {FE14005C-2FEA-4FEE-A399-341133386242}
+		{BFF27F6A-E934-4665-847E-413EB0F42758} = {A94F0C5D-8D0C-41A3-B4B7-5FCD4B279F8A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A771BDD-BEE7-427A-A4AF-21BF646DBE94}
+	EndGlobalSection
+EndGlobal
