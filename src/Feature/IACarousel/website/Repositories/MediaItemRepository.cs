@@ -16,7 +16,7 @@ namespace WbbHackathon.Feature.IACarousel.Repositories
 {
     public class MediaItemRepository : IMediaItemRepository
     {
-        public List<string> CreateMediaItem(List<string> path, string destination, string database)
+        public List<string> CreateMediaItem(List<string> path, string destination, string database = "master")
         {
             List<string> result = new List<string>();            
 

@@ -5,38 +5,58 @@
 {
     return;
 }
+@using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "formImages" }))
+{
+    @Html.Sitecore().FormHandler("SmartCarousel", "SaveSelectedImages")
 
-<div class="container py-5">
-    <p class="lead pt-3">Smart Image Generator - Editor View</p>
-    <p><strong>This view is only available on content editor mode</strong></p>
-    <p><strong>Regenerate: </strong>Replace all the selected images for new ones</p>
-    <p><strong>Save: </strong>Save all the selected images for user visualization</p>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="container py-5">
+        <p class="lead pt-3">Smart Image Generator - Editor View</p>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
 
-        @foreach (var item in Model.Images)
-	    {
-             <div class="col">
-                 <div class="card">
-                     <img src="@item.Url" class="card-img-top"
-                          alt="...">
-                     <input type="checkbox" name="@item.ID" id="@item.ID" style="
+            @foreach (var item in Model.Images)
+            {
+                <div class="col">
+                    <div class="card">
+                        <img src="@item.Url" class="card-img-top"
+                             alt="...">
+                        <input type="checkbox" name="generatedImages" id="@item.ID" style="
                         position: absolute;
                         margin: 1rem;
                         width: 2rem;
                         height: 2rem;
                     ">
-                 </div>
-             </div>
-	    }
+                    </div>
+                </div>
+            }
 
-        
-        
-    </div>
-</div>
 
-<nav class="navbar fixed-bottom bg-light">
-    <div class="container text-right" style="display: flex; justify-content: right;">
-        <button type="button" class="btn btn-outline-danger w-25" style="margin-right: 1rem;">Regenerate</button>
-        <button type="button" class="btn btn-outline-success w-25">Save</button>
+
+        </div>
     </div>
-</nav>
+
+
+    <nav class="navbar fixed-bottom bg-light">
+        <div class="container text-right" style="display: flex; justify-content: right;">
+            @Html.Hidden("selectedImages")
+            @Html.Hidden("prompt",Model.Prompt)
+            <button type="button" class="btn btn-outline-success w-25" id="savebtn">Save</button>
+        </div>
+    </nav>
+}
+
+<script>
+    $(document).ready(function () {
+
+        $(".row .col input[name='generatedImages']:checked").each(function () {
+            var id = this.attr('id');
+            var selectedImage = $("#selectedImages").val();
+            selectedImage = selectedImage + id + "|";
+            $("#selectedImages").val(selectedImage);
+        });
+
+        $("#savebtn").click(function () {
+            $("#formImages").submit();
+        });
+
+    });
+</script>
