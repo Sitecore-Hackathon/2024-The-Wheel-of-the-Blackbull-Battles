@@ -65,23 +65,30 @@ namespace WbbHackathon.Feature.IACarousel.Repositories
             ID templateID = new ID(templateId);
             ID parentID = new ID(parentItemId);
 
-            Item parentItem = Sitecore.Context.Database.GetItem(parentID);
+            Database masterDb = Factory.GetDatabase("master");
+
+            Item parentItem = masterDb.GetItem(parentID);
 
             if (parentItem != null)            {
 
                 using (new SecurityDisabler())
                 {
-                    Item newItem = parentItem.Add(itemName, new TemplateID(templateID));
-
-                    if (newItem != null)
+                    Item childItem = parentItem.Children[itemName];
+                    if (childItem == null)
                     {
-                        if (multiListIds != null && multiListIds.Count > 0)
-                        {
-                            string imagesIds = string.Join("|", multiListIds);
-                            newItem.Fields[Templates.UserSmartCarousel.Fields.Images]?.SetValue(imagesIds, true);
-                        }
+                        Item newItem = parentItem.Add(itemName, new TemplateID(templateID));
 
-                        newItem.Editing.EndEdit();
+                        if (newItem != null)
+                        {
+                            if (multiListIds != null && multiListIds.Count > 0)
+                            {
+                                newItem.Editing.BeginEdit();
+                                string imagesIds = string.Join("|", multiListIds);
+                                newItem.Fields[Templates.UserSmartCarousel.Fields.Images]?.SetValue(imagesIds, true);
+                                newItem.Editing.EndEdit();
+                            }
+
+                        }
                     }
                 }
             }

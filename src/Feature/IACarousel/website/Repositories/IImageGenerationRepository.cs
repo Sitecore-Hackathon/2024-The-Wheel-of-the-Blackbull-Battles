@@ -4,6 +4,6 @@ namespace WbbHackathon.Feature.IACarousel.Repositories
 {
     public interface IImageGenerationRepository
     {
-        SmartCarouselModel GenerateImages();
+        SmartCarouselModel GenerateImages(string dataSourceId);
     }
 }

@@ -8,6 +8,8 @@ namespace WbbHackathon.Feature.IACarousel.Models
 
         public string Prompt { get; set; }
 
+        public string DataSource { get; set; }   
+
         public SmartCarouselModel()
         {
             Images = new List<SmartCarouselImage>();
