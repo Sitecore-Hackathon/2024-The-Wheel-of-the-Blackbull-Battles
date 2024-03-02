@@ -1,0 +1,43 @@
+﻿@using WbbHackathon.Feature.IACarousel.Models
+
+@model UserSmartCarouselModel
+
+@if (Model == null)
+{
+    return;
+}
+
+<div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+            @{int buttonCount = 1;}
+            @foreach (Image image in Model.Images)
+            {
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@(buttonCount - 1)" class="@(buttonCount == 1 ? "active" : "")"
+                        aria-current="true" aria-label="Slide @buttonCount"></button>
+                buttonCount++;
+            }
+            </div>
+        <div class="carousel-inner">
+            @{int imageCount = 0;}
+            @foreach (Image image in Model.Images)
+            {
+                <div class="@("carousel-item" + (imageCount == 0 ? " active" : ""))">
+                    <img src="@image.Url" class="d-block w-100" width="512" height="512"
+                         alt="@image.Alt">
+                </div>
+                imageCount++;
+            }
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
