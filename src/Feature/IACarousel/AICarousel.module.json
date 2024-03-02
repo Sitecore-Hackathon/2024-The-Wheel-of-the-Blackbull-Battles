@@ -1,0 +1,20 @@
+{
+    "namespace": "Feature.AICarousel",
+    "references": [
+        
+    ],
+    "items": {
+        "includes": [
+            {
+                "name": "Templates",
+                "path": "/sitecore/templates/Feature/IACarousel",
+                "database": "master"
+            },
+            {
+                "name": "Renderings",
+                "path": "/sitecore/layout/Renderings/Feature/IACarousel",
+                "database": "master"
+            }
+        ]
+    }
+}

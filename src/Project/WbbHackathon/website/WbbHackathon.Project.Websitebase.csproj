@@ -47,7 +47,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\include\Project\WbbHackathon.Serialization.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\layouts\HackathonLayout.cshtml" />
     <None Include="Web.config" />
