@@ -9,24 +9,17 @@
 You can find a very good reference to Github flavoured markdown reference in [this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). If you want something a bit more WYSIWYG for editing then could use [StackEdit](https://stackedit.io/app) which provides a more user friendly interface for generating the Markdown code. Those of you who are [VS Code fans](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview) can edit/preview directly in that interface too.
 
 ## Team name
-⟹ Write the name of your Hackathon team here
+⟹ The Weel of the blackbull battles
 
 ## Category
-⟹ Write the name of the selected category
+⟹ Best use of AI
 
 ## Description
-⟹ Write a clear description of your hackathon entry.  
+⟹ The “Smart User Carousel" is a hero carousel that use Leonardo AI to get images based on a pront, the idea of the component is get images easaly using AI and saved directly in the media library  for getting them then.
 
-  - Module Purpose
-  - What problem was solved (if any)
-    - How does this module solve it
-
-_You can alternately paste a [link here](#docs) to a document within this repo containing the description._
 
 ## Video link
-⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
 
-⟹ [Replace this Video link](#video-link)
 
 
 
@@ -34,32 +27,40 @@ _You can alternately paste a [link here](#docs) to a document within this repo c
 
 ⟹ Does your module rely on other Sitecore modules or frameworks?
 
-- List any dependencies
-- Or other modules that must be installed
-- Or services that must be enabled/configured
+-Sitecore Management Services 5.2.113 https://dev.sitecore.net/Downloads/Sitecore_CLI/5x/Sitecore_CLI_52113.aspx
 
 _Remove this subsection if your entry does not have any prerequisites other than Sitecore_
 
 ## Installation instructions
-⟹ Write a short clear step-wise instruction on how to install your module.  
 
-> _A simple well-described installation process is required to win the Hackathon._  
-> Feel free to use any of the following tools/formats as part of the installation:
-> - Sitecore Package files
-> - Docker image builds
-> - Sitecore CLI
-> - msbuild
-> - npm / yarn
-> 
-> _Do not use_
-> - TDS
-> - Unicorn
- 
-for example:
+-Install Sitecore 10.3.1 standalone
+-using the PS Script set the following in these variables:
+ -- $Prefix = "wbb-hackaton"
+ -- $SitecoreSiteName = "$prefix.local"
+ -- $XConnectSiteName = "$prefix.xconnect"
+-Run the installation process
+-make sure your domain is like this one: https://wbb-hackaton.local/
+-clone the main branch in a folder
+-open the solution
+-build the solution and restore the nuget packages
+-using the Website project, deploy the project to the sitecore instance using the publishin process
+-Open a PS Terminal in the root of the solution
+-execute the following commands
+-- dotnet tool restore
+-- dotnet sitecore init
+-- dotnet sitecore plugin init
+-- dotnet sitecore login --authority https://wbb-hackaton.identityserver/ --cm https://wbb-hackaton.local/ --allow-write true
+--- do the login process and close the window
+-- dotnet sitecore ser push
 
-1. Use the Sitecore Installation wizard to install the [package](#link-to-package)
-2. ...
-3. profit
+install the following package in the sc instance
+Smart Carousel Items.zip
+--in in the folder .\scPackages\Smart Carousel Items.zip
+
+-publish all website
+
+
+
 
 ### Configuration
 ⟹ If there are any custom configuration that has to be set manually then remember to add all details here.
